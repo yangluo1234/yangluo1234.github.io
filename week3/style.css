@@ -32,3 +32,12 @@ span {
   font-size: 4rem;
   color: green;
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
