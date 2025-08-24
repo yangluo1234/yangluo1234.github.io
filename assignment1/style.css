@@ -1,16 +1,26 @@
+/* I chose black and orange as my main colour scheme because it connects directly 
+to the visual identity of the Gehry Getty website. The black background 
+references the immersive concert hall environment, while the orange accent 
+reflects stage lights and warmth. This creates a strong contrast for readability 
+and a thematic link to the interactive experience I analysed. */
+
+/* This is for managment my website's colours and spacing.
+  Easy to change later and keep the style consistent */
 :root {
   --title-height: 8.5rem;
   --title-gap: 1rem;
-  --answer-gap: 1rem;
+  --answer-gap: 2rem;
+  --bg-colour: #1a1a1a;
   --primary-color: #fd8b19;
   --secondary-color: #47685b;
   --text-color: #fff5e4;
   --secondary-bg-color: #403d3c;
 }
-
+/* Dark background to make orange cards stand out.
+   Inter is clean and readable on screen */
 html,
 body {
-  background-color: #1a1a1a;
+  background-color: var(--bg-colour);
   height: 100%;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -24,6 +34,7 @@ h1 {
   text-align: center;
 }
 
+/* This is for the screenshot and source link */
 .cover {
   font-family: "Inter", sans-serif;
   font-size: 1.5em;
@@ -40,6 +51,7 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Fixed height and object-fit to keep the image tidy on the screen   */
 .cover img {
   width: auto;
   height: 400px;
@@ -48,10 +60,11 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 0.5rem;
 }
+/* using underline and strong colour help link visibility and accessibility */
 .cover figcaption {
   font-family: "Inter", sans-serif;
   font-size: 1em;
-  color: #403d3c;
+  color: var(--secondary-bg-color);
   text-align: center;
 }
 .cover figcaption a {
@@ -60,6 +73,8 @@ h1 {
   font-weight: bold;
 }
 
+/* Using grid layout is to wrap cards responsively.
+    set minmax(450px,1fr) keeps cards wide enourgh for comfortable reading. */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
@@ -69,7 +84,8 @@ h1 {
   padding: 2rem;
   align-items: stretch;
 }
-
+/* Card design: use strong colour, soft shadow to fit the theme.
+   Grid Layout: this keeps all titles aligned and answers starting at the same hight.*/
 .card {
   background: var(--primary-color);
   padding: 2rem;
@@ -79,19 +95,24 @@ h1 {
   row-gap: var(--title-gap);
   color: var(--primary-color);
   font-size: 1.2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(154, 235, 161, 0.376);
 }
 
+/* Title styling: clear hierarchy and strong contrast with the card.
+   Using align-self:start is to align titles to the top of the title area.
+   Using overflow:hidden is to avoid overflow if the title is too long. */
 .card h2 {
   margin: 0;
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   align-self: start;
   overflow: hidden;
   color: var(--secondary-color);
 }
 
+/* High contrst colour, larger line hight and even spacing make the text area look clear.
+   Using flex is to manage multiple paragraphs or lists */
 .answer {
   margin: 0;
   line-height: 2rem;
@@ -103,10 +124,9 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: var(--answer-gap);
-
   overflow: auto;
 }
-
+/* Act as a closing banner for the webpage */
 footer {
   font-family: "Inter", sans-serif;
   text-align: center;
