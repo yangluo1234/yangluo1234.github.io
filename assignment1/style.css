@@ -1,16 +1,25 @@
+:root {
+  --title-height: 8.5rem;
+  --title-gap: 1rem;
+  --answer-gap: 1rem;
+  --primary-color: #fd8b19;
+  --secondary-color: #47685b;
+  --text-color: #fff5e4;
+  --secondary-bg-color: #403d3c;
+}
+
 html,
 body {
   background-color: #1a1a1a;
   height: 100%;
   margin: 0;
   font-family: "Inter", sans-serif;
-  color: #ffffff;
 }
 
 h1 {
   font-family: "Playfair Display", serif;
   font-size: 2.5em;
-  color: #ff7a00;
+  color: var(--primary-color);
   margin: 1rem 1rem 0.25rem;
   text-align: center;
 }
@@ -19,14 +28,14 @@ h1 {
   font-family: "Inter", sans-serif;
   font-size: 1.5em;
   max-width: 800px;
-  color: #ff7a00;
+  color: var(--primary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1rem auto;
   text-align: center;
   padding: 10px;
-  background-color: #403d3c;
+  background-color: var(--secondary-bg-color);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -46,7 +55,7 @@ h1 {
   text-align: center;
 }
 .cover figcaption a {
-  color: #ff7a00;
+  color: var(--primary-color);
   text-decoration: underline;
   font-weight: bold;
 }
@@ -54,7 +63,7 @@ h1 {
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  max-width: 2100px;
+  max-width: 2400px;
   margin: 0 auto;
   gap: 2rem;
   padding: 2rem;
@@ -62,38 +71,48 @@ h1 {
 }
 
 .card {
-  background: #ff7a00;
+  background: var(--primary-color);
   padding: 1.25rem;
   border-radius: 16px;
   display: grid;
-  grid-template-rows: auto 1fr;
-  color: #ffffff;
+  grid-template-rows: var(--title-height) 1fr;
+  row-gap: var(--title-gap);
+  color: var(--primary-color);
   font-size: 1.2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
-  margin: 0 0 1rem;
+  margin: 0;
   font-weight: 800;
   font-size: 1.6rem;
   line-height: 1.5;
+  align-self: end;
+  overflow: hidden;
+  color: var(--secondary-color);
 }
 
 .answer {
   margin: 0;
-  line-height: 1.5rem;
+  line-height: 2rem;
   font-family: "Inter", sans-serif;
-  color: #ffffff;
+  color: var(--text-color);
+  font-weight: 800;
   font-size: 1.2rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--answer-gap);
+
+  overflow: auto;
 }
 
 footer {
   font-family: "Inter", sans-serif;
   text-align: center;
   padding: 15px;
-  background-color: #403d3c;
+  background-color: var(--secondary-bg-color);
   font-size: 1rem;
-  color: #cccccc;
-  border-top: 2px solid #ff7a00;
+  color: var(--text-color);
+  border-top: 2px solid var(--primary-color);
 }
