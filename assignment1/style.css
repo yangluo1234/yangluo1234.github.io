@@ -62,7 +62,7 @@ h1 {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   max-width: 2400px;
   margin: 0 auto;
   gap: 2rem;
@@ -72,7 +72,7 @@ h1 {
 
 .card {
   background: var(--primary-color);
-  padding: 1.25rem;
+  padding: 2rem;
   border-radius: 16px;
   display: grid;
   grid-template-rows: var(--title-height) 1fr;
@@ -87,7 +87,7 @@ h1 {
   font-weight: 800;
   font-size: 1.6rem;
   line-height: 1.5;
-  align-self: end;
+  align-self: start;
   overflow: hidden;
   color: var(--secondary-color);
 }
