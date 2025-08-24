@@ -1,14 +1,99 @@
+html,
+body {
+  background-color: #1a1a1a;
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  color: #ff7a00;
+  margin: 1rem 1rem 0.25rem;
+  text-align: center;
+}
+
+.cover {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5em;
+  max-width: 800px;
+  color: #ff7a00;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  text-align: center;
+  padding: 10px;
+  background-color: #403d3c;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cover img {
+  width: auto;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+.cover figcaption {
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  color: #403d3c;
+  text-align: center;
+}
+.cover figcaption a {
+  color: #ff7a00;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 2100px;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: stretch;
 }
 
 .card {
-  background: #e9f7be;
-  height: 10rem;
-  border-radius: 10px;
-  padding: 20px;
+  background: #ff7a00;
+  padding: 1.25rem;
+  border-radius: 16px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  color: #ffffff;
+  font-size: 1.2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+}
+
+.card h2 {
+  margin: 0 0 1rem;
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.answer {
+  margin: 0;
+  line-height: 1.5rem;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+footer {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding: 15px;
+  background-color: #403d3c;
+  font-size: 1rem;
+  color: #cccccc;
+  border-top: 2px solid #ff7a00;
 }
