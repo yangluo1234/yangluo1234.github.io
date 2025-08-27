@@ -14,7 +14,7 @@ console.log(mySection);
 let myNewContent = `
 <h2>this is an image of a cat</h2>
 <p>do you like it?</p>`;
-mySection.innerHTML = myNewContent;
+mySection.innerHTML += myNewContent;
 
 const h2Heading = document.querySelector("#second-heading");
 console.log(h2Heading);
@@ -40,4 +40,23 @@ function toggleMe() {
   const myImg = document.querySelector("img");
   console.log(myImg);
   myImg.classList.toggle("round");
+}
+
+const myImg = document.querySelector("img");
+console.log(myImg);
+myImg.addEventListener("mouseenter", addMe);
+myImg.addEventListener("mouseleave", removeMe);
+myImg.addEventListener("click", handleClick);
+
+function addMe() {
+  myImg.classList.add("round");
+}
+
+function removeMe() {
+  myImg.classList.remove("round");
+}
+
+function handleClick() {
+  //alert("you clicked the image!");
+  topHeading.textContent = "My cat!!";
 }
