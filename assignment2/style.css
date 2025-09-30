@@ -82,11 +82,6 @@ header h1 {
 .textSection {
   grid-area: detail;
 }
-.step-btns {
-  grid-area: steps;
-  position: sticky;
-  top: 16px;
-}
 
 /* double border */
 .double-border {
@@ -148,15 +143,19 @@ header h1 {
 /* Steps section */
 .step-btns h2 {
   margin: 0 0 6px;
+  line-height: 1.2;
   font-size: 1.1rem;
 }
 .step-btns p {
   margin: 0 0 12px;
   opacity: 0.75;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .step-btns {
+  grid-area: steps;
+  position: sticky;
+  top: 16px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
