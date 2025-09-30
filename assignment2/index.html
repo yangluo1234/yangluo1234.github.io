@@ -1,10 +1,46 @@
 <!DOCTYPE html>
+<!--
+  Craft Lab - Paper Windmill Tutorial
+  Design Concept:
+  - This page is designed to be a simple, user-friendly tutorial for making a paper windmill.
+  - This webpage supports a side-by-side learning experience: the video is on the left, 
+    and the step list on the right so users can easily follow along.
+  - I keep the layout clean and simple because users may be crafting while following the tutorial. Large buttons 
+    and clear spacing reduce the chance of misclicks. 
+
+  About Favicon:
+    - I added a custom favicon to keep the identity consistent across tabs and bookmarks.
+    - The favicon is a simplified version of a windmill, which is relevant to the tutorial content.
+
+  About the player controls:
+    - I hide the default video controls and to to add context-specific features: step jump (1–8), replay,
+      like counter, mute, fast-forward, and fullscreen.
+
+  About the Usability/Accesssibility design: 
+    - I added the poster image removes "black first frame" so the interface looks cleaner.
+    - I I added the step buttons  to the right of the video player so users can easily jump to a specific step, 
+      and I added short written instructions below the video for accessibility.
+
+  About the references:
+   - The video is from theBerry Bunch, licensed under CC BY-NC 4.0.
+   - The icons are from Icons8.
+-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Craft Lab</title>
     <!-- add the font family of your choice -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
@@ -12,62 +48,133 @@
   <body>
     <!-- Header Section -->
     <header>
-      <h1>Media Player Website</h1>
+      <h1>Craft Lab — Paper Windmill Tutorial</h1>
     </header>
 
-    <!-- Navigation Section -->
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Videos</a></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Playlists</a></li>
-        <!-- Add or remove navigation items as needed -->
-      </ul>
-    </nav>
-
-    <!-- Main Content Section -->
     <main class="container">
       <!-- Media Player Section -->
-      <div class="media-player">
-        <video id="custom-video-player" controls>
+      <section class="mediaPlayerSection double-border">
+        <video id="craft-video" poster="video_cover.png">
           <source
-            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
+            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/berry-bunch_handheld-windmill-fan.mp4"
             type="video/mp4"
           />
         </video>
-        <div class="custom-controls">
-          <button id="play-pause-btn" onclick="togglePlayPause()">
+
+        <!-- This is the control part for the media -->
+        <div class="controls">
+          <button id="play-pause-btn" class="double-border">
             <img
               id="play-pause-img"
-              src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/play--v2.png"
               alt="Play Button"
-              width="24"
-              height="24"
             />
           </button>
-          <!-- add the missing buttons or functionality here -->
-          <div class="progress-bar">
-            <span id="progress-bar-fill"></span>
-          </div>
+          <button id="mute-unmute-btn" class="double-border">
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/no-audio--v1.png"
+              alt=""
+              id="mute-unmute-img"
+            />
+          </button>
+          <button id="fast-forward-btn" class="double-border">
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/fast-forward.png"
+              alt=""
+              id="fast-forward-img"
+            />
+          </button>
+          <div id="progress-bar-container"><span id="progress-bar"></span></div>
+          <button id="fullscreen-btn" class="double-border">
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/full-screen--v1.png"
+              alt=""
+              id="fullscreen-img"
+            />
+          </button>
+          <button id="replay-btn" class="double-border">
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/replay.png"
+              alt=""
+              id="replay-img"
+            />
+          </button>
+          <button id="heart-btn" class="double-border">
+            <img
+              src="https://img.icons8.com/?size=36&id=DFU1kReSUccu&format=png&color=000000"
+              alt=""
+              id="heart-img"
+            />
+          </button>
+          <div id="likes"></div>
         </div>
-      </div>
-
-      <!-- Additional Content Section -->
-      <section>
-        <h2>Additional Content</h2>
-        <p>This is where you can showcase any other relevant content.</p>
-        <!-- Add more content as needed -->
+      </section>
+      <section class="step-btns double-border">
+        <h2>Jump to a step</h2>
+        <p>Press 1 - 8 to jump</p>
+        <button id="step1-btn" class="double-border step-btn">
+          1. Materials
+        </button>
+        <button id="step2-btn" class="double-border step-btn">
+          2. Square & Center
+        </button>
+        <button id="step3-btn" class="double-border step-btn">
+          3. Cut & Corner holes
+        </button>
+        <button id="step4-btn" class="double-border step-btn">
+          4. Fold Corners
+        </button>
+        <button id="step5-btn" class="double-border step-btn">
+          5. Make Foam Washers
+        </button>
+        <button id="step6-btn" class="double-border step-btn">
+          6. Build The Spindle
+        </button>
+        <button id="step7-btn" class="double-border step-btn">
+          7. Trim & Secure
+        </button>
+        <button id="step8-btn" class="double-border step-btn">
+          8. Test & Finish
+        </button>
+      </section>
+      <!-- Text Section -->
+      <section class="textSection double-border">
+        <div id="step-info" class="step-info">
+          <h3 id="step-title">Step 1 - Materials</h3>
+          <p id="step-text">
+            Craft foam or card, pipe cleaner, stapler/glue dots or glue, hole
+            punch, scissors, paper straws.
+          </p>
+        </div>
       </section>
     </main>
-
     <!-- Footer Section -->
     <footer>
-      <p>&copy; 2024 Media Player Website. All rights reserved.</p>
-      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
-      <a href="https://icons8.com">Icons8</a>
-      <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
-      <a href="https://icons8.com">Icons8</a>
+      <p>&copy; 2025 Craft Lab Website. All rights reserved.</p>
+      <p class="attribution">
+        Video: "<a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://vimeo.com/719005078"
+        >
+          Art Time, Handheld Windmill / Fan</a
+        >" by
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://vimeo.com/berrybunchfamily"
+          >theBerry Bunch</a
+        >, licensed under
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://creativecommons.org/licenses/by-nc/4.0/?ref=openverse"
+        >
+          CC BY-NC 4.0</a
+        >.
+      </p>
+
+      <p>UI Icons by <a href="https://icons8.com/">Icons8</a></p>
     </footer>
   </body>
 </html>

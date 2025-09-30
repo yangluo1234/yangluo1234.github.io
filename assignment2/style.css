@@ -1,120 +1,199 @@
-:root {
-  --primary-bg-color: #f4f4f4;
-  --text-color: #333;
-  --main-bg-color: #333;
-  --main-text-color: #fff;
-  --main-btn-bg-color: #938989;
-}
+/* 
+Design system:
+- Colours: 
+  - I chose a deep teal as the primary colour to match the tones  of the video,
+  with a light minty background to keep the page bright. Using the same hue makes the page feel connected of the video.
+  - I used a contrasting warm accent colour for buttons and highlights to make them stand out.
+- Typography: 
+  - I used a clean sans-serif font (REM) for a modern look. Larger, bold headings create a clear hierarchy.
 
-body,
-h1,
-p,
-ul {
-  margin: 0;
-  padding: 0;
+- Layout: 
+  - A two-column grid layout keeps the video and steps side by side for easy access.
+
+- Buttons:
+  - Buttons are large enough for comfortable touch. I keep hover/active
+    feedback simple, and I do not over-animate to avoid distraction.
+
+- CSS Variables:
+  - I used CSS variables for colors to ensure consistency and make future changes easier.
+*/
+
+:root {
+  --primary-bg-color: #f2fffd;
+  --text-color: #143633;
+
+  --main-bg-color: #0f756d;
+  --main-text-color: #ffffff;
+
+  --accent-1: #9af5ed;
+  --accent-2: #ca815e;
+  --accent-ink: #143633;
+
+  --secondary-dark: #75310f;
+}
+html,
+body {
+  height: 100%;
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  background-color: var(--primary-bg-color);
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-family: "REM", sans-serif;
+  background: var(--primary-bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 
-/* Add additional styles as needed */
-
-/* Create a container for the main content */
-.container {
-  max-width: 1000px;
-  width: 100%;
-  padding: 10px;
-}
-
-/* Header styling */
-header {
-  background-color: var(--main-bg-color);
+/* Header & Footer */
+header,
+footer {
+  background: var(--main-bg-color);
   color: var(--main-text-color);
+  text-align: center;
   padding: 10px 0;
-  text-align: center;
   width: 100%;
 }
-
-/* Navigation styling */
-nav {
-  margin-top: 20px;
-  text-align: center;
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  margin-top: 24px;
+  padding: 24px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(520px, 2fr) minmax(280px, 1fr);
+  grid-template-areas:
+    "video steps"
+    "detail steps";
+  align-items: start;
+}
+.mediaPlayerSection {
+  grid-area: video;
+}
+.textSection {
+  grid-area: detail;
+}
+.step-btns {
+  grid-area: steps;
+  position: sticky;
+  top: 16px;
 }
 
-nav ul li {
-  margin-right: 20px;
+/* double border */
+.double-border {
+  border: 6px double var(--accent-2);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(20, 54, 51, 0.06);
+  background: var(--primary-bg-color);
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-/* Media player styling */
-.media-player {
+/* Video */
+.mediaPlayerSection video {
   width: 100%;
-  margin: 0 auto;
+  border-radius: 12px;
+  display: block;
+  background-color: var(--main-bg-color);
 }
 
-.media-player video {
-  max-width: 100%;
-}
-
-.custom-controls {
+/* Controls row */
+.controls {
+  margin-top: 12px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  margin-top: 10px;
-  width: 100%;
+  gap: 12px;
 }
-
-.custom-controls button {
-  background-color: var(--main-btn-bg-color);
-  color: var(--main-text-color);
+.controls button {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
   border: none;
-  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
   cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
+}
+.controls button:hover {
+  scale: 0.9;
+  background-color: var(--secondary-dark);
 }
 
-.progress-bar {
-  width: 100%;
+/* Progress bar */
+#progress-bar-container {
+  position: relative;
+  flex: 1;
   height: 10px;
-  background-color: #ddd;
-  margin-top: 10px;
+  background: var(--accent-1);
+  border-radius: 99px;
   overflow: hidden;
 }
-
-.progress-bar span {
-  display: block;
-  height: 100%;
-  background-color: var(--main-bg-color);
-  width: 0;
-  transition: width 0.3s ease;
+#progress-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  background: var(--accent-2);
+  transition: width 0.2s ease;
 }
 
-/* Footer styling */
-footer {
-  background-color: var(--main-bg-color);
+/* Steps section */
+.step-btns h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+.step-btns p {
+  margin: 0 0 12px;
+  opacity: 0.75;
+  font-size: 0.9rem;
+}
+
+.step-btns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.step-btns .step-btn {
+  height: 84px;
+  border: none;
+  border-radius: 12px;
+  background: var(--main-bg-color);
   color: var(--main-text-color);
-  text-align: center;
-  padding: 10px 0;
-  width: 100%;
+  font-weight: 500;
+  cursor: pointer;
+}
+.step-btns .step-btn:hover {
+  scale: 0.9;
+  background-color: var(--secondary-dark);
+}
+.step-btn.active {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+/* Current step detail */
+.step-info {
+  border: 1px solid var(--accent-1);
+  border-radius: 12px;
+  padding: 20px;
+  background: var(--primary-bg-color);
+}
+.step-info h3 {
+  margin: 0 0 6px;
+}
+.step-info p {
+  margin: 0;
+}
+
+footer a {
+  color: var(--main-text-color);
+  text-decoration: underline;
 }
