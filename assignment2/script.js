@@ -150,6 +150,7 @@ const step7Time = 206;
 const step8Time = 246;
 
 // Each step content
+// Titles and descriptions for each step
 const step1Title = "Step 1 - Materials";
 const step1Text =
   "Craft foam or card, pipe cleaner, stapler/glue dots or glue, hole punch, scissors, paper straws.";
@@ -183,6 +184,13 @@ const step8Text =
   "Your pinwheel is ready! If it does not spin, it may be too tight. Create a tiny gap, tweak until it spins smoothly.";
 
 // Function to update step info display
+// Also highlights the active button
+// Call this function when the step changes
+// n is the step number from 1 to 8
+// Update the step title and text based on the step number
+// Then highlight the active button
+// Remove all active classes first
+// Then add active class to the current step button
 function updateStepInfo(n) {
   switch (n) {
     case 1:
