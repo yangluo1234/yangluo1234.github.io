@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucky Scratch</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!--favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <!--Sour Gummy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Lucky Scratch</h1>
+      <p>
+        Flip a card, scratch away the silver, and reveal a little moment of joy.
+      </p>
+    </header>
+
+    <main class="card-container">
+      <!-- ===== Card 1 ===== -->
+      <div class="card">
+        <div class="card-face">
+          <img src="lucky-cover.png" alt="Lucky card cover" draggable="false" />
+        </div>
+        <div class="card-face flip">
+          <div class="stage">
+            <div class="answer a1">
+              <img src="1.png" alt="a1-pic" draggable="false" />
+              <p>You did great today!</p>
+            </div>
+            <canvas class="coat"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Card 2 ===== -->
+      <div class="card">
+        <div class="card-face">
+          <img src="lucky-cover.png" alt="Lucky card cover" draggable="false" />
+        </div>
+        <div class="card-face flip">
+          <div class="stage">
+            <div class="answer a2">
+              <img src="2.png" alt="a2-pic" draggable="false" />
+              <p>Take a breath — you’ve got this.</p>
+            </div>
+            <canvas class="coat"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Card 3 ===== -->
+      <div class="card">
+        <div class="card-face">
+          <img src="lucky-cover.png" alt="Lucky card cover" draggable="false" />
+        </div>
+        <div class="card-face flip">
+          <div class="stage">
+            <div class="answer a3">
+              <img src="3.png" alt="a3-pic" draggable="false" />
+              <p>Small steps, big wins.</p>
+            </div>
+            <canvas class="coat"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Card 4 ===== -->
+      <div class="card">
+        <div class="card-face">
+          <img src="lucky-cover.png" alt="Lucky card cover" draggable="false" />
+        </div>
+        <div class="card-face flip">
+          <div class="stage">
+            <div class="answer a4">
+              <img src="4.png" alt="a4-pic" draggable="false" />
+              <p>Your smile changes days.</p>
+            </div>
+            <canvas class="coat"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Card 5 ===== -->
+      <div class="card">
+        <div class="card-face">
+          <img src="lucky-cover.png" alt="Lucky card cover" draggable="false" />
+        </div>
+        <div class="card-face flip">
+          <div class="stage">
+            <div class="answer a5">
+              <img src="5.png" alt="a5-pic" draggable="false" />
+              <p>Your energy is inspiring.</p>
+            </div>
+            <canvas class="coat"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Card 6 ===== -->
+      <div class="card">
+        <div class="card-face">
+          <img src="lucky-cover.png" alt="Lucky card cover" draggable="false" />
+        </div>
+        <div class="card-face flip">
+          <div class="stage">
+            <div class="answer a6">
+              <img src="6.png" alt="a6-pic" draggable="false" />
+              <p>Kindness is your superpower.</p>
+            </div>
+            <canvas class="coat"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Card 7 ===== -->
+      <div class="card">
+        <div class="card-face">
+          <img src="lucky-cover.png" alt="Lucky card cover" draggable="false" />
+        </div>
+        <div class="card-face flip">
+          <div class="stage">
+            <div class="answer a7">
+              <img src="7.png" alt="a7-pic" draggable="false" />
+              <p>Good things are coming.</p>
+            </div>
+            <canvas class="coat"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Card 8 ===== -->
+      <div class="card">
+        <div class="card-face">
+          <img src="lucky-cover.png" alt="Lucky card cover" draggable="false" />
+        </div>
+        <div class="card-face flip">
+          <div class="stage">
+            <div class="answer a8">
+              <img src="8.png" alt="a8-pic" draggable="false" />
+              <p>You make small things shine.</p>
+            </div>
+            <canvas class="coat"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Card 9 ===== -->
+      <div class="card">
+        <div class="card-face">
+          <img src="lucky-cover.png" alt="Lucky card cover" draggable="false" />
+        </div>
+        <div class="card-face flip">
+          <div class="stage">
+            <div class="answer a9">
+              <img src="9.png" alt="a9-pic" draggable="false" />
+              <p>Brave is your middle name.</p>
+            </div>
+            <canvas class="coat"></canvas>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--audio-->
+    <audio id="flip-sound" src="flip.mp3"></audio>
+    <audio id="lucky-sound" src="lucky-sound.mp3"></audio>
+    <audio id="scratch-sound" src="scratch.mp3" loop></audio>
+
+    <footer>
+      <p>© 2025 Yang Luo — Lucky Scratch Project</p>
+    </footer>
+  </body>
+</html>
