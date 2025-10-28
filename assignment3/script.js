@@ -151,6 +151,7 @@ function enableScratch(canvas) {
     if (!drawing) return;
     drawing = false;
     if (scratchSound) scratchSound.pause();
+    // Check reveal progress after drawing stops (40% threshold)
     checkReveal(canvas, 0.4);
   };
 
