@@ -1,3 +1,35 @@
+/*
+====Design Notes====
+--About the Concept-- 
+- The interface aims to feel playful but calm, using a dark 
+background with starry elements to evoke a sense of night-time wonder.
+- The cards are designed to look like scratch-off lottery tickets,
+ inviting users to interact and discover a short positive message.
+
+--Color Palette--
+- Background: Deep navy (#232946) for a night-sky feel.
+- Card Cover: yellow star pattern on dark blue (#121629) to mimic a night sky.
+- Scratch-off Coat: Silver/gray (#C0C0C0) to resemble real scratch-off material.
+- Text: Bright white (#FFFFFE) for high contrast and readability.
+- Accent Colors: Soft pastels (light pink, light blue, light green) for the
+ revealed messages to maintain a cheerful tone.
+
+--Typography--
+- Font: "Sour Gummy", a playful and rounded sans-serif font to enhance the fun 
+and playful theme.
+
+--Layout--
+- 9 cards arranged in a 3x3 grid, centered on the page with ample spacing.
+- Each card is a fixed size to resemble real scratch-off tickets.
+--Interactions--
+- Hover Effect: Slight scale-up on hover to indicate interactivity.
+- Click to Flip: Smooth 3D flip animation to reveal the scratch-off surface.
+- Scratch-off Effect: Realistic scratching interaction using canvas to reveal
+ the message underneath.
+- Sound Effects: Subtle scratching sound during interaction and a cheerful
+ sound when the message is fully revealed.
+*/
+
 /* =====================Design Elements ===================== */
 :root {
   --bg: #232946;
@@ -6,6 +38,7 @@
   --card: #121629;
   --border: #1b2135;
   --shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  --sliver: #c6cbd3;
 }
 
 * {
@@ -58,7 +91,7 @@ header p {
 }
 
 .card:hover {
-  scale: 0.98;
+  scale: 1.02;
 }
 
 .card-face {

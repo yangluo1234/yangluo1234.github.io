@@ -1,3 +1,54 @@
+<!-- 
+ //================Lucky Scratch=================//
+  // A playful web page where users can flip cards and scratch off a silver coating
+  to reveal positive messages underneath with sound effects enhancing the experience.
+
+  //================Project Features:=================//
+  - 9 interactive cards arranged in a 3x3 grid layout.
+  - Each card flips on click to reveal a scratch-off surface.
+  - Users can "scratch" the silver coating using pointer events to reveal messages.
+  - Sound effects play during flipping and scratching for immersive feedback.
+
+  //================Technical Implementation:=================//
+  1. Each card listens for click events to trigger the flip animation.
+  2. When flipped, a canvas element is initialized with a silver coat.
+ 3. Pointer events on the canvas allow the user to "scratch" off the coat.
+ 4. The amount scratched is tracked, and once a threshold(40% threshold) is reached,
+    the coat is fully cleared to reveal the message underneath.
+ 5. Sound effects play at each interaction step for feedback.
+
+  //================ Technical References:=================//
+ Key references informing the scratch-off logic:
+ - envatotuts+ tutorial on creating a scratch-off effect using HTML5 canvas.
+ - URL: https://webdesign.tutsplus.com/tutorials/create-a-scratch-off-effect-vanilla-javascript--cms-108922t
+ - Digital Scratch Card HTML CSS JavaScript from Medium article by Mr Zouraiz
+ - URL:https://medium.com/@mr.zouraiz1580/digital-scratch-card-html-8eaf1dad6095
+ - Build Scratch Card Effect Using HTML, CSS & JavaScript from YouTube tutorial by Live Blogger
+ - URL:https://www.youtube.com/watch?v=12ElqBxCZPI
+
+ //=================Audio=================//
+  - Using free sound effects from Pixabay to enhance user interaction.
+  - Flip Sound: "flipCard" by Splashdust (Freesound), Pixabay
+  - Lucky Sound: "Lucky Guitar Sound" by SergeQuadrado, Pixabay
+  - Scratch Sound: "Pencil Crayon Foley Coloring 3" by floraphonic, Pixabay
+
+//================References:=================//
+// Audio: flip.mp3 — "flipCard" by Splashdust (Freesound), Pixabay, 
+// free for use under Pixabay Content License, viewed 20 Oct 2025,
+// <https://pixabay.com/sound-effects/flipcard-91468/>
+
+// Audio: lucky-sound.mp3 — "Lucky Guitar Sound" by SergeQuadrado, Pixabay,
+// free for use under Pixabay Content License, viewed 20 Oct 2025,
+// <https://pixabay.com/sound-effects/lucky-guitar-sound-379745/>
+
+// Audio: scratch-sound.mp3 — "Pencil Crayon Foley Coloring 3" by floraphonic,
+// Pixabay, free for use under Pixabay Content License, viewed 20 Oct 2025,
+// <https://pixabay.com/sound-effects/pencil-crayon-foley-coloring-3-200910/>
+
+//Illustrations created by the author using ChatGPT, October 2025. 
+Generated based on custom prompts written by Yang Luo for the Lucky Scratch project. 
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

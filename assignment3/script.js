@@ -1,3 +1,53 @@
+/* ===================== Flip and Scratch Logic ===================== 
+------------Overview------------------:
+This project lets user flip and scratch cards. When a card is clicked,
+it flips to reveal a siliver coat. The user can then "scratch" off the coat,
+revealing the positive message and a small illustration underneath with sound effects.
+
+// The interaction uses the HTML5 canvas for the scratch effects, and 
+CSS 3D tansforms for the flip animation. The "destination-out" mode is used
+on the canvas to create the easing effect when the user scratches the surface, which is 
+adapted from a tutorial on Tuts+ Web Design. 
+
+//Audio feedback is provided for flipping, scratching, and revealing the message, which 
+enhances the user experience. 
+
+------------Why this project?------------------:
+I want to design something that feels lucky, playful, and rewarding. The flip and scratch
+actions encourage curiosity and physical enagement, while the short positive messages gie 
+a small boost of joy. Using JavaScript and sound effects helps show how 
+interaction design can support emotion and motivation in digital experiences.
+
+------------How this project works------------------:
+1. Each card listens for click events to trigger the flip animation
+2. When flipped, a canvas element is initialized with a silver coat
+3. Pointer events on the canvas allow the user to "scratch" off the coat
+4. The amount scratched is tracked, and once a threshold(40% threshold) is reached,
+   the coat is fully cleared to reveal the message underneath
+5. Sound effects play at each interaction step for feedback
+
+-----Reference------
+
+ Tuts+ Web Design 2024,
+   "How to Create a Scratch Card Effect in Vanilla JavaScript",
+   viewed 20 October 2025,
+<https://webdesign.tutsplus.com/how-to-create-a-scratch-card-effect-in-vanilla-javascript--cms-108922t>
+
+// Audio: flip.mp3 — "flipCard" by Splashdust (Freesound), Pixabay, 
+// free for use under Pixabay Content License, viewed 20 Oct 2025,
+// <https://pixabay.com/sound-effects/flipcard-91468/>
+
+// Audio: lucky-sound.mp3 — "Lucky Guitar Sound" by SergeQuadrado, Pixabay,
+// free for use under Pixabay Content License, viewed 20 Oct 2025,
+// <https://pixabay.com/sound-effects/lucky-guitar-sound-379745/>
+
+// Audio: scratch-sound.mp3 — "Pencil Crayon Foley Coloring 3" by floraphonic,
+// Pixabay, free for use under Pixabay Content License, viewed 20 Oct 2025,
+// <https://pixabay.com/sound-effects/pencil-crayon-foley-coloring-3-200910/>
+
+*/
+
+// ===================== Flip and Scratch Logic =====================
 // ----- Select elements -----
 //select all cards and audio elements
 // Get all card elements
@@ -55,7 +105,7 @@ function initCoat(canvas) {
 
   // using destination-out for erasing effect
   ctx.globalCompositeOperation = "source-over";
-  ctx.fillStyle = "#c6cbd3"; // silver paint
+  ctx.fillStyle = "#c6cbd3";
   ctx.fillRect(0, 0, w, h);
   ctx.globalCompositeOperation = "destination-out"; // erase mode
 
@@ -101,7 +151,7 @@ function enableScratch(canvas) {
     if (!drawing) return;
     drawing = false;
     if (scratchSound) scratchSound.pause();
-    checkReveal(canvas, 0.3);
+    checkReveal(canvas, 0.4);
   };
 
   canvas.addEventListener("pointerup", stopDraw);
