@@ -9,6 +9,17 @@
   - Users can "scratch" the silver coating using pointer events to reveal messages.
   - Sound effects play during flipping and scratching for immersive feedback.
 
+  //================User Experience Design:=================//
+  1. Visual Design:
+     - Color Palette: Deep navy background with silver scratch-off coating and bright white text for contrast.
+     - Typography: Fun, rounded font to evoke a playful and lighthearted mood.
+     - Imagery: Cheerful illustrations accompanying each positive message.
+     - Favicon: Custom favicon to enhance branding and recognition.
+  2. Interaction Design:
+      - Hover Effects: Cards slightly scale up on hover to indicate interactivity.
+      - Click to Flip: Flip animation to reveal the scratch-off surface.   
+      - Scratch-off Effect: Realistic scratching interaction using canvas.
+      - Sound Effects: Subtle scratching sound during interaction and a cheerful sound when the message is fully revealed.
   //================Technical Implementation:=================//
   1. Each card listens for click events to trigger the flip animation.
   2. When flipped, a canvas element is initialized with a silver coat.
@@ -76,6 +87,9 @@ Generated based on custom prompts written by Yang Luo for the Lucky Scratch proj
       <h1>Lucky Scratch</h1>
       <p>
         Flip a card, scratch away the silver, and reveal a little moment of joy.
+      </p>
+      <p class="note">
+        Tip: Please enable your sound to experience the audio feedback.
       </p>
     </header>
 

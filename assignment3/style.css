@@ -9,9 +9,9 @@ background with starry elements to evoke a sense of night-time wonder.
 --Color Palette--
 - Background: Deep navy (#232946) for a night-sky feel.
 - Card Cover: yellow star pattern on dark blue (#121629) to mimic a night sky.
-- Scratch-off Coat: Silver/gray (#C0C0C0) to resemble real scratch-off material.
+- Scratch-off Coat: Silver/gray (#c6cbd3) to resemble real scratch-off material.
 - Text: Bright white (#FFFFFE) for high contrast and readability.
-- Accent Colors: Soft pastels (light pink, light blue, light green) for the
+- Accent Colors: Soft pastels such as #ffc6ff, #9bf6ff and #31f926 for the
  revealed messages to maintain a cheerful tone.
 
 --Typography--
@@ -29,7 +29,6 @@ and playful theme.
 - Sound Effects: Subtle scratching sound during interaction and a cheerful
  sound when the message is fully revealed.
 */
-
 /* =====================Design Elements ===================== */
 :root {
   --bg: #232946;
@@ -65,6 +64,14 @@ header p {
   max-width: 100%;
   text-align: center;
   color: var(--para);
+}
+
+.note {
+  color: var(--para);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  opacity: 0.85;
+  font-style: italic;
 }
 
 /* ===================== Card styles ===================== */
